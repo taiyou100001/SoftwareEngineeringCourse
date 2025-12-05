@@ -24,21 +24,38 @@
 
 ## 架構圖（Mermaid）
 ```mermaid
-graph TD
-		A[健康系統] --> A1(HP)
-		A --> A2(疾病)
-		A --> A3(營養)
-		B[情緒系統] --> B1(快樂)
-		B --> B2(壓力)
-		C[互動系統] --> C1(摸摸)
-		C --> C2(玩耍)
-		D[時間系統] --> D1(晝夜)
-		D --> D2(年齡轉換)
-		E[事件系統] --> E1(生病)
-		E --> E2(逃跑)
-		E --> E3(過度壓力)
-		F[遊戲邏輯流程] --> F1(餵食→健康→情緒→動畫)
-		F --> F2(清潔→衛生→疾病機率)
+classDiagram
+    class PetStatus {
+        +int HP
+        +int Hunger
+        +int Cleanliness
+        +int Happiness
+        +int Age
+        +UpdateStats()
+        +CheckHealth()
+    }
+
+    class InteractionManager {
+        +Feed(foodItem)
+        +CleanCage()
+        +Play()
+    }
+
+    class EventManager {
+        +TriggerEvent(eventType)
+        -CalculateProbability()
+    }
+
+    class InventorySystem {
+        +List items
+        +UseItem(itemID)
+        +AddItem(itemID)
+    }
+
+    %% 關聯性
+    InteractionManager --> PetStatus : 修改數值
+    InteractionManager --> InventorySystem : 消耗物品
+    EventManager --> PetStatus : 監測狀態
 ```
 
 ## 資料結構設計
