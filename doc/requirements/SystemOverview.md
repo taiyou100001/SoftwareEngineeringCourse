@@ -56,14 +56,14 @@ graph TD
     UI --> Logic[核心邏輯層 Core Logic Layer]
 
     subgraph Core Logic Layer
-        GameManager[遊戲管理器 (Game Loop)]
+        GameManager["遊戲管理器 (Game Loop)"]
         
         subgraph SubSystems [子系統模組]
-            StatsMgr[狀態管理模組<br>(健康/飢餓/情緒)]
-            LifeCycleMgr[生命週期模組<br>(生長/老化/死亡)]
-            InteractMgr[互動行為模組<br>(餵食/清潔/撫摸)]
-            EconomyMgr[經濟系統模組<br>(預算/花費)]
-            EventMgr[隨機事件模組<br>(生病/特殊反應)]
+            StatsMgr["狀態管理模組<br>(健康/飢餓/情緒)"]
+            LifeCycleMgr["生命週期模組<br>(生長/老化/死亡)"]
+            InteractMgr["互動行為模組<br>(餵食/清潔/撫摸)"]
+            EconomyMgr["經濟系統模組<br>(預算/花費)"]
+            EventMgr["隨機事件模組<br>(生病/特殊反應)"]
         end
         
         GameManager <--> SubSystems
@@ -72,8 +72,8 @@ graph TD
     Logic --> Data[資料存取層 Data Layer]
 
     subgraph Data Layer
-        SaveData[存檔資料<br>(Json/PlayerPrefs)]
-        ConfigData[遊戲設定參數<br>(食物數值/成長曲線)]
+        SaveData["存檔資料<br>(Json/PlayerPrefs)"]
+        ConfigData["遊戲設定參數<br>(食物數值/成長曲線)"]
     end
 ```
 
