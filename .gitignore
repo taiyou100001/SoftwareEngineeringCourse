@@ -1,2 +1,20 @@
+# OS-specific files
 *.DS_Store
-*Thumb.db
+Thumbs.db
+
+# Build artifacts
+/dist/
+/build/
+*.log
+*.exe
+
+# Dependency directories
+/node_modules/
+/__pycache__/
+
+# Editor/IDE files (e.g., VS Code)
+.vscode/
+.idea/
+
+# Secret/Environment files
+.env
