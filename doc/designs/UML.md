@@ -5,21 +5,21 @@
 對應 User Stories (US-01 ~ US-06) 與功能需求 (FR-01 ~ FR-17)。
 
 ```mermaid
-usecaseDiagram
-    actor Player as "玩家 (Player)"
-    actor System as "系統 (System)"
-
-    package "蜜袋鼯飼養模擬" {
-        usecase "建立角色 (FR-01)" as UC1
-        usecase "餵食 (FR-02)" as UC2
-        usecase "清潔籠子 (FR-03)" as UC3
-        usecase "互動/撫摸 (FR-04, FR-15)" as UC4
-        usecase "查看日誌 (FR-05)" as UC5
-        usecase "購買物品 (FR-12, FR-13)" as UC6
-        usecase "處理醫療事件 (FR-14)" as UC7
-        usecase "查看回顧日誌 (FR-11)" as UC8
-    }
-
+graph TB
+    Player([玩家 Player])
+    System([系統 System])
+    
+    subgraph 蜜袋鼯飼養模擬
+        UC1[建立角色<br/>FR-01]
+        UC2[餵食<br/>FR-02]
+        UC3[清潔籠子<br/>FR-03]
+        UC4[互動/撫摸<br/>FR-04, FR-15]
+        UC5[查看日誌<br/>FR-05]
+        UC6[購買物品<br/>FR-12, FR-13]
+        UC7[處理醫療事件<br/>FR-14]
+        UC8[查看回顧日誌<br/>FR-11]
+    end
+    
     Player --> UC1
     Player --> UC2
     Player --> UC3
@@ -28,14 +28,14 @@ usecaseDiagram
     Player --> UC6
     Player --> UC7
     Player --> UC8
-
-    UC1 ..> System : 生成初始屬性
-    UC2 ..> System : 更新飢餓/快樂/健康
-    UC3 ..> System : 更新清潔度
-    UC4 ..> System : 更新親密度/快樂
-    UC6 ..> System : 扣除金錢
-    UC7 ..> System : 扣除金錢/恢復健康
-    UC8 ..> System : 角色死亡時生成
+    
+    UC1 -.生成初始屬性.-> System
+    UC2 -.更新飢餓/快樂/健康.-> System
+    UC3 -.更新清潔度.-> System
+    UC4 -.更新親密度/快樂.-> System
+    UC6 -.扣除金錢.-> System
+    UC7 -.扣除金錢/恢復健康.-> System
+    UC8 -.角色死亡時生成.-> System
 ```
 
 ## 2. 類別圖 (Class Diagram)
